@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2026-07-17 16:08:28.541901",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "start_date",
+  "start_time",
+  "host",
+  "category",
+  "medium",
+  "short_description",
+  "about",
+  "column_break_wmba",
+  "time_zone",
+  "end_date",
+  "end_time",
+  "venue",
+  "banner_image",
+  "schedule_tab",
+  "schedules",
+  "payment_tab",
+  "payment_gateway",
+  "website_tab",
+  "external_registration_page",
+  "registration_url",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "medium",
+   "fieldtype": "Select",
+   "label": "Medium",
+   "options": "In Person\nOnline"
+  },
+  {
+   "fieldname": "short_description",
+   "fieldtype": "Small Text",
+   "label": "Short Description"
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Link",
+   "label": "Venue",
+   "options": "Event Venue"
+  },
+  {
+   "fieldname": "about",
+   "fieldtype": "Text Editor",
+   "label": "About"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Event Categories",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "host",
+   "fieldtype": "Link",
+   "label": "Host",
+   "options": "Event Host",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_zone",
+   "fieldtype": "Autocomplete",
+   "label": "Time Zone"
+  },
+  {
+   "fieldname": "banner_image",
+   "fieldtype": "Attach",
+   "label": "Banner Image"
+  },
+  {
+   "fieldname": "schedule_tab",
+   "fieldtype": "Tab Break",
+   "label": "Schedule"
+  },
+  {
+   "fieldname": "schedules",
+   "fieldtype": "Table",
+   "label": "Schedules",
+   "options": "Schedule Item"
+  },
+  {
+   "fieldname": "column_break_wmba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "payment_gateway",
+   "fieldtype": "Link",
+   "label": "Payment Gateway",
+   "options": "Payment Gateway"
+  },
+  {
+   "default": "0",
+   "fieldname": "external_registration_page",
+   "fieldtype": "Check",
+   "label": "External Registration Page?"
+  },
+  {
+   "depends_on": "eval:doc.external_registration_page",
+   "fieldname": "registration_url",
+   "fieldtype": "Data",
+   "label": "Registration URL",
+   "mandatory_depends_on": "eval:doc.external_registration_page",
+   "options": "URL"
+  },
+  {
+   "fieldname": "website_tab",
+   "fieldtype": "Tab Break",
+   "label": "Website"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Link",
+   "label": "Route",
+   "options": "IS Event"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Sponsership",
+   "link_doctype": "Event Sponser",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Sponsership",
+   "link_doctype": "Sponsership Tier",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Sponsership",
+   "link_doctype": "Sponsership Tier",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Event Ticket Type",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Event Ticket",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Event Booking",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Ticket Add-on",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "proposals",
+   "link_doctype": "Talk Proposal",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "proposals",
+   "link_doctype": "Sponsership Proposal",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "General",
+   "link_doctype": "Event Track",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "General",
+   "link_doctype": "Event Check In",
+   "link_fieldname": "event"
+  }
+ ],
+ "modified": "2026-08-14 18:12:43.735256",
+ "modified_by": "Administrator",
+ "module": "Events",
+ "name": "IS Event",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "start_date",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}
