@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-29 18:28:11.456205",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "add_ons",
+  "value",
+  "price",
+  "currency"
+ ],
+ "fields": [
+  {
+   "fieldname": "value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Value",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "add_ons.price",
+   "fetch_if_empty": 1,
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price",
+   "non_negative": 1
+  },
+  {
+   "fetch_from": "add_ons.currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Add Ons",
+   "options": "Ticket Add-on",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-29 18:50:18.468029",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Ticket Add-on Value",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
